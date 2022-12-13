@@ -1,4 +1,5 @@
-import {Entity, model, property} from '@loopback/repository';
+import {belongsTo, Entity, model, property} from '@loopback/repository';
+import {TodoList, TodoListWithRelations} from './todo-list.model';
 
 @model()
 export class Todo extends Entity {
@@ -16,10 +17,13 @@ export class Todo extends Entity {
   title: string;
 
   @property({
+    name: 'is_complete',
     type: 'boolean',
   })
   isComplete?: boolean;
 
+  @belongsTo(() => TodoList, {name: 'todoList'}, {name: 'todo_list_id'})
+  todoListId: number;
 
   constructor(data?: Partial<Todo>) {
     super(data);
@@ -27,7 +31,7 @@ export class Todo extends Entity {
 }
 
 export interface TodoRelations {
-  // describe navigational properties here
+  todoList?: TodoListWithRelations;
 }
 
 export type TodoWithRelations = Todo & TodoRelations;

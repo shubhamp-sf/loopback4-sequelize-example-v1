@@ -1,3 +1,4 @@
+require('dotenv').config();
 import {ApplicationConfig, SequelizeTodoListApplication} from './application';
 
 export * from './application';

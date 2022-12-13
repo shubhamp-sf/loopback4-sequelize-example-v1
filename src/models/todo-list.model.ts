@@ -1,4 +1,5 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, hasMany, model, property} from '@loopback/repository';
+import {Todo} from './todo.model';
 
 @model()
 export class TodoList extends Entity {
@@ -20,6 +21,16 @@ export class TodoList extends Entity {
     default: 'black',
   })
   color?: string;
+
+  @hasMany(() => Todo, {
+    keyTo: 'todoListId',
+  }) /* keyTo is required for sequelize repository */
+  todos: Todo[];
+
+  @property({
+    type: 'number',
+  })
+  user?: number;
 
   constructor(data?: Partial<TodoList>) {
     super(data);

@@ -1,5 +1,5 @@
 import {inject, lifeCycleObserver, LifeCycleObserver} from '@loopback/core';
-import {juggler} from '@loopback/repository';
+import {SequelizeDataSource} from '../../../loopback4-sequelize/dist';
 
 const config = {
   name: 'db',
@@ -8,7 +8,7 @@ const config = {
   port: 5999,
   user: 'postgres',
   password: 'rest-rest',
-  database: 'postgres'
+  database: 'postgres',
 };
 
 // Observe application's life cycle to disconnect the datasource when
@@ -16,8 +16,10 @@ const config = {
 // gracefully. The `stop()` method is inherited from `juggler.DataSource`.
 // Learn more at https://loopback.io/doc/en/lb4/Life-cycle.html
 @lifeCycleObserver('datasource')
-export class DbDataSource extends juggler.DataSource
-  implements LifeCycleObserver {
+export class DbDataSource
+  extends SequelizeDataSource
+  implements LifeCycleObserver
+{
   static dataSourceName = 'db';
   static readonly defaultConfig = config;
 
