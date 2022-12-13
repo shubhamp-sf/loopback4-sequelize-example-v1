@@ -9,6 +9,15 @@ export class Appointment extends Entity {
   })
   id?: number;
 
+  @property({
+    type: 'number',
+  })
+  doctorId?: number;
+
+  @property({
+    type: 'number',
+  })
+  patientId?: number;
 
   constructor(data?: Partial<Appointment>) {
     super(data);

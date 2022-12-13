@@ -4,10 +4,11 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
+      "outputCapture": "std",
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/dist/index.js",
+      "program": "${workspaceFolder}/dist/index.js"
     },
     {
       "type": "node",

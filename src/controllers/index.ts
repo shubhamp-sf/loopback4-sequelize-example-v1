@@ -5,3 +5,4 @@ export * from './todo-list.controller';
 export * from './todo-todo-list.controller';
 export * from './user.controller';
 export * from './user-todo-list.controller';
+export * from './doctor-patient.controller';

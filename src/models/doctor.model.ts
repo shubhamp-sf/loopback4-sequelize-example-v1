@@ -1,4 +1,6 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, hasMany, model, property} from '@loopback/repository';
+import {Appointment} from './appointment.model';
+import {Patient} from './patient.model';
 
 @model()
 export class Doctor extends Entity {
@@ -15,6 +17,14 @@ export class Doctor extends Entity {
   })
   name: string;
 
+  @hasMany(() => Patient, {
+    through: {
+      model: () => Appointment,
+      keyFrom: 'doctorId',
+      keyTo: 'patientId',
+    },
+  })
+  patients: Patient[];
 
   constructor(data?: Partial<Doctor>) {
     super(data);

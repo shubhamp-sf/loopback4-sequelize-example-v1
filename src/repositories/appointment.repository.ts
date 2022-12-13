@@ -1,16 +1,14 @@
 import {inject} from '@loopback/core';
-import {DefaultCrudRepository} from '@loopback/repository';
+import {SequelizeRepository} from '../../../loopback4-sequelize/dist';
 import {DbDataSource} from '../datasources';
 import {Appointment, AppointmentRelations} from '../models';
 
-export class AppointmentRepository extends DefaultCrudRepository<
+export class AppointmentRepository extends SequelizeRepository<
   Appointment,
   typeof Appointment.prototype.id,
   AppointmentRelations
 > {
-  constructor(
-    @inject('datasources.db') dataSource: DbDataSource,
-  ) {
+  constructor(@inject('datasources.db') dataSource: DbDataSource) {
     super(Appointment, dataSource);
   }
 }
