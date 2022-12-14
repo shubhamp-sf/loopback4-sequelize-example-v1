@@ -1,9 +1,9 @@
 import {inject} from '@loopback/core';
-import {SequelizeRepository} from '../../../loopback4-sequelize/dist';
+import {DefaultCrudRepository} from '@loopback/repository';
 import {DbDataSource} from '../datasources';
 import {Appointment, AppointmentRelations} from '../models';
 
-export class AppointmentRepository extends SequelizeRepository<
+export class AppointmentRepository extends DefaultCrudRepository<
   Appointment,
   typeof Appointment.prototype.id,
   AppointmentRelations

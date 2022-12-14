@@ -1,9 +1,9 @@
 import {inject} from '@loopback/core';
-import {SequelizeRepository} from '../../../loopback4-sequelize/dist';
+import {DefaultCrudRepository} from '@loopback/repository';
 import {DbDataSource} from '../datasources';
 import {Patient, PatientRelations} from '../models';
 
-export class PatientRepository extends SequelizeRepository<
+export class PatientRepository extends DefaultCrudRepository<
   Patient,
   typeof Patient.prototype.id,
   PatientRelations
