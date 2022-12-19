@@ -1,7 +1,7 @@
-import {Model, model, property} from '@loopback/repository';
+import {Entity, model, property} from '@loopback/repository';
 
 @model()
-export class ProgrammingLanguage extends Model {
+export class ProgrammingLanguage extends Entity {
   @property({
     type: 'number',
     id: true,
@@ -15,7 +15,6 @@ export class ProgrammingLanguage extends Model {
   })
   name: string;
 
-
   constructor(data?: Partial<ProgrammingLanguage>) {
     super(data);
   }
@@ -25,4 +24,5 @@ export interface ProgrammingLanguageRelations {
   // describe navigational properties here
 }
 
-export type ProgrammingLanguageWithRelations = ProgrammingLanguage & ProgrammingLanguageRelations;
+export type ProgrammingLanguageWithRelations = ProgrammingLanguage &
+  ProgrammingLanguageRelations;

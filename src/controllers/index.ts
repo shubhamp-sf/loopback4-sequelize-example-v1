@@ -8,3 +8,5 @@ export * from './user-todo-list.controller';
 export * from './doctor-patient.controller';
 export * from './doctor.controller';
 export * from './patient.controller';
+export * from './developer.controller';
+export * from './programming-languange.controller';

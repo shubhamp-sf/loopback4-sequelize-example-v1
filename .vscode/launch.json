@@ -8,6 +8,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
+      "cwd": "${workspaceFolder}\\..\\",
       "program": "${workspaceFolder}/dist/index.js"
     },
     {
