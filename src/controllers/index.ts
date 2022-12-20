@@ -10,3 +10,6 @@ export * from './doctor.controller';
 export * from './patient.controller';
 export * from './developer.controller';
 export * from './programming-languange.controller';
+export * from './book-category.controller';
+export * from './book.controller';
+export * from './category.controller';

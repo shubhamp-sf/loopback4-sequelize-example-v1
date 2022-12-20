@@ -6,3 +6,5 @@ export * from './patient.model';
 export * from './appointment.model';
 export * from './programming-language.model';
 export * from './developer.model';
+export * from './book.model';
+export * from './category.model';

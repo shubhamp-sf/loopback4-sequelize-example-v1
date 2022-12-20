@@ -2,6 +2,19 @@ import {Entity, hasOne, model, property} from '@loopback/repository';
 import {TodoList} from './todo-list.model';
 
 @model()
+export class Address extends Entity {
+  @property({
+    type: 'string',
+  })
+  city: string;
+
+  @property({
+    type: 'number',
+  })
+  zipCode: number;
+}
+
+@model()
 export class User extends Entity {
   @property({
     type: 'number',
@@ -34,6 +47,14 @@ export class User extends Entity {
     name: 'is_active',
   })
   active?: boolean;
+
+  @property({
+    type: 'object',
+    postgresql: {
+      dataType: 'json',
+    },
+  })
+  address: Address;
 
   @hasOne(() => TodoList, {keyTo: 'user'})
   todoList: TodoList;

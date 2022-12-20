@@ -6,3 +6,5 @@ export * from './patient.repository';
 export * from './appointment.repository';
 export * from './developer.repository';
 export * from './programming-language.repository';
+export * from './book.repository';
+export * from './category.repository';
