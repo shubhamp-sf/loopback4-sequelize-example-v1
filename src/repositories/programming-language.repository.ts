@@ -1,5 +1,5 @@
 import {inject} from '@loopback/core';
-import {SequelizeRepository} from '../../../loopback4-sequelize/dist';
+import {SequelizeRepository} from 'loopback4-sequelize';
 import {DbDataSource} from '../datasources';
 import {ProgrammingLanguage, ProgrammingLanguageRelations} from '../models';
 

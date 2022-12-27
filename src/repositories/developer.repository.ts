@@ -1,15 +1,11 @@
 import {Getter, inject} from '@loopback/core';
-import {
-  DefaultCrudRepository,
-  ReferencesManyAccessor,
-  repository,
-} from '@loopback/repository';
-import {SequelizeRepository} from '../../../loopback4-sequelize';
+import {ReferencesManyAccessor, repository} from '@loopback/repository';
+import {SequelizeRepository} from 'loopback4-sequelize';
 import {DbDataSource} from '../datasources';
 import {Developer, DeveloperRelations, ProgrammingLanguage} from '../models';
 import {ProgrammingLanguageRepository} from './programming-language.repository';
 
-export class DeveloperRepository extends DefaultCrudRepository<
+export class DeveloperRepository extends SequelizeRepository<
   Developer,
   typeof Developer.prototype.id,
   DeveloperRelations

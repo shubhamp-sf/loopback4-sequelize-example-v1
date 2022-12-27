@@ -1,10 +1,6 @@
 import {Getter, inject} from '@loopback/core';
-import {
-  DefaultCrudRepository,
-  HasManyRepositoryFactory,
-  repository,
-} from '@loopback/repository';
-import {SequelizeRepository} from '../../../loopback4-sequelize/dist';
+import {HasManyRepositoryFactory, repository} from '@loopback/repository';
+import {SequelizeRepository} from 'loopback4-sequelize';
 import {DbDataSource} from '../datasources';
 import {Todo, TodoList, TodoListRelations} from '../models';
 import {TodoRepository} from './todo.repository';

@@ -36,12 +36,6 @@ export class User extends Entity {
   email: string;
 
   @property({
-    type: 'number',
-    required: true,
-  })
-  age: number;
-
-  @property({
     type: 'boolean',
     default: false,
     name: 'is_active',
@@ -55,6 +49,11 @@ export class User extends Entity {
     },
   })
   address: Address;
+
+  @property({
+    type: 'date',
+  })
+  dob?: Date;
 
   @hasOne(() => TodoList, {keyTo: 'user'})
   todoList: TodoList;
