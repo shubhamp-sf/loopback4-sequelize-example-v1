@@ -1,9 +1,9 @@
-import {SequelizeTodoListApplication} from '../..';
 import {
+  Client,
   createRestAppClient,
   givenHttpServerConfig,
-  Client,
 } from '@loopback/testlab';
+import {Loopback4SequelizeExample} from '../..';
 
 export async function setupApplication(): Promise<AppWithClient> {
   const restConfig = givenHttpServerConfig({
@@ -14,7 +14,7 @@ export async function setupApplication(): Promise<AppWithClient> {
     // port: +process.env.PORT,
   });
 
-  const app = new SequelizeTodoListApplication({
+  const app = new Loopback4SequelizeExample({
     rest: restConfig,
   });
 
@@ -27,6 +27,6 @@ export async function setupApplication(): Promise<AppWithClient> {
 }
 
 export interface AppWithClient {
-  app: SequelizeTodoListApplication;
+  app: Loopback4SequelizeExample;
   client: Client;
 }

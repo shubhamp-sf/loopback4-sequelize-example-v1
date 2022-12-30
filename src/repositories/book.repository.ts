@@ -1,11 +1,11 @@
 import {Getter, inject} from '@loopback/core';
 import {BelongsToAccessor, repository} from '@loopback/repository';
-import {SequelizeRepository} from 'loopback4-sequelize';
+import {SequelizeCrudRepository} from 'loopback4-sequelize';
 import {DbDataSource} from '../datasources';
 import {Book, BookRelations, Category} from '../models';
 import {CategoryRepository} from './category.repository';
 
-export class BookRepository extends SequelizeRepository<
+export class BookRepository extends SequelizeCrudRepository<
   Book,
   typeof Book.prototype.id,
   BookRelations

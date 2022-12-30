@@ -5,9 +5,9 @@
       "request": "launch",
       "name": "Launch Program",
       "outputCapture": "std",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "envFile": "${workspaceFolder}/.env",
+      "skipFiles": ["<node_internals>/**"],
+      "runtimeArgs": ["--preserve-symlinks"],
       "cwd": "${workspaceFolder}\\..\\",
       "program": "${workspaceFolder}/dist/index.js"
     },

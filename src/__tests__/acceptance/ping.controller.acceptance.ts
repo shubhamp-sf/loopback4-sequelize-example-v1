@@ -1,9 +1,9 @@
 import {Client, expect} from '@loopback/testlab';
-import {SequelizeTodoListApplication} from '../..';
+import {Loopback4SequelizeExample} from '../..';
 import {setupApplication} from './test-helper';
 
 describe('PingController', () => {
-  let app: SequelizeTodoListApplication;
+  let app: Loopback4SequelizeExample;
   let client: Client;
 
   before('setupApplication', async () => {

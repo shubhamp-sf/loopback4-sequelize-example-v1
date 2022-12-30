@@ -1,10 +1,10 @@
 require('dotenv').config();
-import {ApplicationConfig, SequelizeTodoListApplication} from './application';
+import {ApplicationConfig, Loopback4SequelizeExample} from './application';
 
 export * from './application';
 
 export async function main(options: ApplicationConfig = {}) {
-  const app = new SequelizeTodoListApplication(options);
+  const app = new Loopback4SequelizeExample(options);
   await app.boot();
   await app.start();
 

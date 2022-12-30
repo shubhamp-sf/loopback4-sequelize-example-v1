@@ -1,15 +1,15 @@
 import {Getter, inject} from '@loopback/core';
 import {
-  DefaultCrudRepository,
   HasManyThroughRepositoryFactory,
   repository,
 } from '@loopback/repository';
+import {SequelizeCrudRepository} from 'loopback4-sequelize';
 import {DbDataSource} from '../datasources';
 import {Appointment, Doctor, DoctorRelations, Patient} from '../models';
 import {AppointmentRepository} from './appointment.repository';
 import {PatientRepository} from './patient.repository';
 
-export class DoctorRepository extends DefaultCrudRepository<
+export class DoctorRepository extends SequelizeCrudRepository<
   Doctor,
   typeof Doctor.prototype.id,
   DoctorRelations

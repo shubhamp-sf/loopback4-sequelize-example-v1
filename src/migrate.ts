@@ -1,10 +1,10 @@
-import {SequelizeTodoListApplication} from './application';
+import {Loopback4SequelizeExample} from './application';
 
 export async function migrate(args: string[]) {
   const existingSchema = args.includes('--rebuild') ? 'drop' : 'alter';
   console.log('Migrating schemas (%s existing schema)', existingSchema);
 
-  const app = new SequelizeTodoListApplication();
+  const app = new Loopback4SequelizeExample();
   await app.boot();
   await app.migrateSchema({existingSchema});
 

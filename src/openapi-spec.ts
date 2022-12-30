@@ -1,5 +1,5 @@
 import {ApplicationConfig} from '@loopback/core';
-import {SequelizeTodoListApplication} from './application';
+import {Loopback4SequelizeExample} from './application';
 
 /**
  * Export the OpenAPI spec from the application
@@ -12,7 +12,7 @@ async function exportOpenApiSpec(): Promise<void> {
     },
   };
   const outFile = process.argv[2] ?? '';
-  const app = new SequelizeTodoListApplication(config);
+  const app = new Loopback4SequelizeExample(config);
   await app.boot();
   await app.exportOpenApiSpec(outFile);
 }

@@ -16,12 +16,6 @@ export class TodoList extends Entity {
   })
   title: string;
 
-  @property({
-    type: 'string',
-    default: 'black',
-  })
-  color?: string;
-
   @hasMany(() => Todo, {
     keyTo: 'todoListId',
   }) /* keyTo is required for sequelize repository */

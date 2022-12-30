@@ -12,7 +12,7 @@ import {MySequence} from './sequence';
 
 export {ApplicationConfig};
 
-export class SequelizeTodoListApplication extends BootMixin(
+export class Loopback4SequelizeExample extends BootMixin(
   ServiceMixin(RepositoryMixin(RestApplication)),
 ) {
   constructor(options: ApplicationConfig = {}) {
