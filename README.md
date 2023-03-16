@@ -1,3 +1,6 @@
+> This repo uses initial development version of the loopback4-sequelize package, please use the official [@loopback/sequelize](https://www.npmjs.com/package/@loopback/sequelize) in your applications.
+
+
 # loopback4 sequelize example
 
 This application is generated using [LoopBack 4 CLI](https://loopback.io/doc/en/lb4/Command-line-interface.html) with the
